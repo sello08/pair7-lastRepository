@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 round3">
+      <div>
+        <h4>Services</h4>
+        <br />
+
+        <div class="list-group mx-0 w-auto">
+          <label
+            class="list-group-item d-flex gap-2"
+            *ngFor="let i of services"
+          >
+            <br />
+            <li type="button" (click)="selectedSer(i)">
+              <input
+                class="form-check-input flex-shrink-0"
+                type="radio"
+                name="listGroupRadios"
+                id="listGroupRadios1"
+              />
+              {{ i.id }}- {{ i.name }}
+            </li>
+            <br />
+          </label>
+        </div>
+
+        <br />
+        <button
+          class="button is-normal button is-link is-light"
+          type="button"
+          [disabled]="!valid"
+          (click)="addService()"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+
+  <div *ngFor="let i of services"></div>
+</div>
