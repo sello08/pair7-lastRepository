@@ -43,7 +43,11 @@
           >
             Log In
           </button>
-          <button *ngIf="loggedin()" class="button is-link" (click)="onLogut()">
+          <button
+            *ngIf="loggedin()"
+            class="button is-link"
+            (click)="onLogOut()"
+          >
             Log Out
           </button>
         </div>

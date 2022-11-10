@@ -22,7 +22,7 @@ ngOnInit(): void {
     return this.authService.isAuthenticated
   }
  
-  onLogut() {
+  onLogOut() {
       this.authService.logoutToken();
       this.isAuthenticated=this.authService.isAuthenticated;
       console.log("token silindi")

@@ -39,31 +39,34 @@
       </igx-input-group>
 
       <br />
-
-      <ng-container
+      <div
         *ngIf="
           this.authForm.get('userName')?.dirty &&
           this.authForm.get('userName')?.touched &&
           this.authForm.get('userName')?.errors
         "
+        class="alert alert-danger"
+        role="alert"
       >
-        <div
-          class="help is-danger"
-          *ngIf="this.authForm.get('userName')?.errors?.['required']"
-        >
-          *zorunlu alan
-        </div>
-        <div
-          class="help is-danger"
-          *ngIf="this.authForm.get('userName')?.errors?.['minlength']"
-        >
-          User Name
-          {{this.authForm.get('userName')?.errors?.['minlength']?.['actualLength']}}
-          karakter içermektedir ,minumum
-          {{this.authForm.get('userName')?.errors?.['minlength']?.['requiredLength']}}
-          karakter olmalı
-        </div>
-      </ng-container>
+        <ng-container>
+          <div
+            class="help is-danger"
+            *ngIf="this.authForm.get('userName')?.errors?.['required']"
+          >
+            *zorunlu alan
+          </div>
+          <div
+            class="help is-danger"
+            *ngIf="this.authForm.get('userName')?.errors?.['minlength']"
+          >
+            User Name
+            {{this.authForm.get('userName')?.errors?.['minlength']?.['actualLength']}}
+            karakter içermektedir ,minumum
+            {{this.authForm.get('userName')?.errors?.['minlength']?.['requiredLength']}}
+            karakter olmalı
+          </div>
+        </ng-container>
+      </div>
 
       <br /><br /><br /><br />
 

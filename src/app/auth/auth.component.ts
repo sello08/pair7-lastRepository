@@ -64,12 +64,13 @@ export class AuthComponent implements OnInit {
     this.authForm = this.formBuilder.group({
       userName: new FormControl(null,
         [
-          Validators.required,Validators.minLength(4),
+          Validators.required,Validators.minLength(4),Validators.maxLength(10)
         ]),
       password: new FormControl(null,
         [
           Validators.required,
           Validators.minLength(3),
+          Validators.maxLength(7),
         ])
 
     });
