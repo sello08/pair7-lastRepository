@@ -24,3 +24,10 @@ export const serviceSelector = createSelector(
         return state.service
     }
 )
+
+export const userSelector = createSelector(
+    createFeatureSelector('customer'),
+    (state: CustomerState) => {
+        return state.UserModel
+    }
+)

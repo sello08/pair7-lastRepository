@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {  Observable } from 'rxjs';
 import { Users } from 'src/libs';
+import { userSelector } from 'src/app/store/customer.selector';
 
 
 @Component({
@@ -11,9 +12,9 @@ import { Users } from 'src/libs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  UserModel$!: Observable<Users | null>
+
   userInfo!:Users
-  userName!:string |undefined
+  userName!: string | undefined
   password!:string |undefined
   constructor(  private store:Store<CustomerState>) { }
 
@@ -24,17 +25,5 @@ this.getName();
 
 
   getName(){
-    
-  this.UserModel$= this.store.select((s) => s.UserModel);
-  console.log("dasdas",this.UserModel$);
-  this.UserModel$.subscribe((s)=>{
-
-  this.userName=s?.userName
-  console.log("username:", this.userName);
-  this.password=s?.password
-}
-  )
-  }
-
-
+  this.store.select(userSelector).subscribe(response => this.userName = response?.userName)}
 }

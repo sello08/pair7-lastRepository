@@ -47,11 +47,11 @@ export const customerReducer = createReducer(
   }),
     on(
         setTokenUserModel, 
-        (currentState, action) => {
+        (state, {UserModel}) => {
        
           return {
-            ...currentState,
-            UserModel: action.UserModel,
+            ...state,
+            UserModel: UserModel,
           };
         }
       ),
