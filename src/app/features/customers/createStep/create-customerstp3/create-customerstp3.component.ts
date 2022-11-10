@@ -38,11 +38,9 @@ export class CreateCustomerstp3Component implements OnInit {
 
     this.store.select(serviceSelector).subscribe(response => { this.serviceSave = response })
     
-
     
     this.store.select(indCustomerSelector).subscribe(response => {this.indCustomerSave = response})
     
-
    
     this.store.select(corpCustomerSelector).subscribe(response => {this.corpCustomerSave = response})
    
