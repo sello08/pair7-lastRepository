@@ -47,7 +47,7 @@ getService(){
 
   selectedSer(s:Service){
     this.selectedService=s;
-    this.toastr.success(this.selectedService.name, "seçildi");
+    this.toastr.success(this.selectedService.name, "Selected Service");
     this.valid=true;
 
   }

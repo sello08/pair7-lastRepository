@@ -57,7 +57,7 @@ export class CreateCustomerstp3Component implements OnInit {
     
     if(this.corpCustomerSave){
 
-     let customerId = Math.round(Math.random()*100);
+     let customerId = Math.round(Math.random()*1000000);
 
       this.customerService.addCorporateCustomer({...this.corpCustomerSave, customerId: customerId})
         .subscribe(response => { this.store.dispatch(resetCustomerState());  // Save işleminden sonra var olan state bir sonraki kayıt işlmei için sıfırlanır...   
@@ -77,7 +77,7 @@ export class CreateCustomerstp3Component implements OnInit {
     }
     if(this.indCustomerSave){
 
-      const customerId = Math.round(Math.random()*100);
+      const customerId = Math.round(Math.random()*100000);
 
       this.customerService.addIndividualCustomer({...this.indCustomerSave, customerId: customerId})
       .subscribe(response => { this.store.dispatch(resetCustomerState());   // Save işleminden sonra var olan state bir sonraki kayıt işlmei için sıfırlanır...

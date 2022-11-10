@@ -19,7 +19,7 @@ import { setTokenUserModel } from '../store/customer.actions';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-  [x: string]: any;
+  
 
   users!:Users[];
   isLoginMode: boolean = false;
@@ -64,7 +64,7 @@ export class AuthComponent implements OnInit {
     this.authForm = this.formBuilder.group({
       userName: new FormControl(null,
         [
-          Validators.required,
+          Validators.required,Validators.minLength(4),
         ]),
       password: new FormControl(null,
         [
